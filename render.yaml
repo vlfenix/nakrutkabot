@@ -1,0 +1,16 @@
+services:
+  - type: worker
+    name: nakrutka-liqpay-bot
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python nakrutka_bot.py
+    envVars:
+      - key: TELEGRAM_TOKEN
+        sync: false
+      - key: LIQPAY_PUBLIC_KEY
+        sync: false
+      - key: LIQPAY_PRIVATE_KEY
+        sync: false
+      - key: NAKRUTKA_API_KEY
+        sync: false
